@@ -30,6 +30,7 @@ namespace algorithms {
 
         public bool InsertKey(int key) 
         {
+            // O(log(n))
             if(currentHeapSize == capacity) {
                 return false; // Heap full
             }
@@ -47,6 +48,7 @@ namespace algorithms {
         }
 
         public void decreaseKey (int key, int newVal) {
+            // O(log(n))
             heapArray[key] = newVal;
 
             while (key != 0 && heapArray[key] < heapArray[Parent(key)]) {
@@ -56,10 +58,12 @@ namespace algorithms {
         }
 
         public int getMin() {
+            // O(1)
             return heapArray[0];
         }
 
         public int extractMin() {
+            // O(log(n))
             if(currentHeapSize <= 0) {
                 return int.MaxValue;
             }
@@ -79,11 +83,13 @@ namespace algorithms {
         }
 
         public void deleteKey(int key) {
+            // O(log(n))
             decreaseKey(key, int.MinValue);
             extractMin();
         }
 
         public void MinHeapify(int key) {
+            // O(log(n))
             int l = Left(key);
             int r = Right(key);
 
