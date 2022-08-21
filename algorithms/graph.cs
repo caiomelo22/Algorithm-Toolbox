@@ -37,7 +37,7 @@ namespace algorithms
             while (queue.Any())
             {
                 node = queue.First();
-                Console.Write($"{node}\t");
+                Console.Write($"{node}  ");
                 queue.RemoveFirst();
 
                 LinkedList<int> neighbors = _adj[node];
@@ -55,7 +55,7 @@ namespace algorithms
 
         private void recursiveDFS(int node, bool[] visited)
         {
-            Console.Write($"{node}\t");
+            Console.Write($"{node}  ");
             visited[node] = true;
 
             foreach (int neighbor in _adj[node])
