@@ -17,6 +17,9 @@ for (int i = 0; i < arr.Length; i++)
 
 Console.Write('\n');
 
+Console.Write("Binary Search: ");
+Console.WriteLine(Search.binarySearch(arr, 0, arr.Length - 1, 22));
+
 // Graph algorithms
 
 Graph g = new Graph(4);
